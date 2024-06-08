@@ -50,7 +50,7 @@
             </div>
 
             <div class="d-flex justify-content-center mt-4">
-                <button type="submit" class="btn btn-success">Cadastrar</button>
+                <button type="submit" class="btn btn-success">Atualizar</button>
                 <a href="{{ route('medicos.index') }} " class="btn btn-light">Cancelar</a>
             </div>
         </form>
