@@ -56,8 +56,8 @@
             <ul>
                 <li><a href="{{ route('pacientes.index') }}">Pacientes</a></li>
                 <li><a href="{{ route('especialidades.index') }}">Especialidades</a></li>
-                {{-- <li><a href="{{ route('medicos.index') }}">Médicos</a></li>
-                <li><a href="{{ route('atendimentos.index') }}">Atendimentos</a></li> --}}
+                <li><a href="{{ route('medicos.index') }}">Médicos</a></li>
+                {{-- <li><a href="{{ route('atendimentos.index') }}">Atendimentos</a></li>  --}}
             </ul>
         </nav>
     </header>

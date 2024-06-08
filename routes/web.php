@@ -17,5 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('medicos/busca-especialidades', 'MedicoController@buscaEspecialidades')->name('medicos.buscaEspecialidades');
 Route::resource('pacientes','PacienteController');
 Route::resource('especialidades','EspecialidadeController');
+Route::resource('medicos','MedicoController');
