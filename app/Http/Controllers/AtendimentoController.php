@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Atendimento;
+use App\Http\Requests\AtendimentoRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -32,10 +33,10 @@ class AtendimentoController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  AtendimentoRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AtendimentoRequest $request)
     {
         $atendimento = new Atendimento([
             'data_atendimento' => $request->data_atendimento,
@@ -77,12 +78,13 @@ class AtendimentoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  AtendimentoRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AtendimentoRequest $request, $id)
     {
+        dd($request);
         $atendimento = Atendimento::findOrFail($id);
 
         $atendimento->update([
