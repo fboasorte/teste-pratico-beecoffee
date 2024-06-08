@@ -84,7 +84,6 @@ class AtendimentoController extends Controller
      */
     public function update(AtendimentoRequest $request, $id)
     {
-        dd($request);
         $atendimento = Atendimento::findOrFail($id);
 
         $atendimento->update([
