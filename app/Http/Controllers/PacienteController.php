@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PacienteRequest;
 use App\Paciente;
-use Illuminate\Http\Request;
 
 class PacienteController extends Controller
 {
@@ -32,10 +32,10 @@ class PacienteController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  PacienteRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PacienteRequest $request)
     {
         $paciente = new Paciente([
             'nome' => $request->nome,
@@ -74,11 +74,11 @@ class PacienteController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  PacienteRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PacienteRequest $request, $id)
     {
         $paciente = Paciente::findOrFail($id);
 

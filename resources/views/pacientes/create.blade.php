@@ -17,7 +17,7 @@
             <div class="mb-3">
                 <label for="nome" class="form-label"> <br>Nome*:</label>
                 <input type="text" name="nome" id="nome" class="form-control @error('nome') is-invalid @enderror"
-                    placeholder="Nome" required>
+                maxlength="255" placeholder="Nome" required>
 
                 @error('nome')
                     <div class="invalid-feedback">
@@ -29,7 +29,7 @@
             <div class="mb-3">
                 <label for="cpf" class="form-label"> <br>CPF*:</label>
                 <input type="text" name="cpf" id="cpf" class="form-control @error('cpf') is-invalid @enderror"
-                    placeholder="CPF" required>
+                    maxlength="11" placeholder="CPF" required>
 
                 @error('cpf')
                     <div class="invalid-feedback">
@@ -54,7 +54,7 @@
             <div class="mb-3">
                 <label for="cpf" class="form-label"> <br>E-mail*:</label>
                 <input type="email" name="email" id="email"
-                    class="form-control @error('email') is-invalid @enderror" placeholder="E-mail" required>
+                maxlength="255" class="form-control @error('email') is-invalid @enderror" placeholder="E-mail" required>
 
                 @error('email')
                     <div class="invalid-feedback">

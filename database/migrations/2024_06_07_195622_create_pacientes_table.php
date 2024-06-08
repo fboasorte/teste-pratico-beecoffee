@@ -17,7 +17,7 @@ class CreatePacientesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nome');
-            $table->string('cpf', '11');
+            $table->string('cpf', '11')->unique();
             $table->date('data_nascimento');
             $table->string('email');
         });
