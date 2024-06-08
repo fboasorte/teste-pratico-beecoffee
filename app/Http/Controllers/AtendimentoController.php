@@ -14,9 +14,15 @@ class AtendimentoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $atendimentos = Atendimento::all();
+        $medico_id = $request->medico_id;
+        if($medico_id){
+            $atendimentos = Atendimento::where('medico_id', $medico_id)->get();
+        } else {
+            $atendimentos = Atendimento::all();
+        }
+        
         return view('atendimentos.index', compact('atendimentos'));
     }
 

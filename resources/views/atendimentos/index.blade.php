@@ -12,6 +12,18 @@
     </div>
 
     <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-6 text-center">
+                <form action="" method="get">
+                    <label for="medico_id" class="form-label"> <br>Médico*:</label>
+                    <select class="form-select" name="medico_id" id="medico_id"></select>
+                    <button type="submit" class="btn btn-success btn-sm mt-2">Buscar</button>
+                    <a href="{{ route('atendimentos.index') }}"
+                        class="btn btn-primary btn-sm mt-2">Limpar</a>
+                </form>
+            </div>
+        </div>
+        <br>
 
         <div class="col-md-12">
             <div class="card">
@@ -84,5 +96,36 @@
         </div>
 
     </div>
+
+    <script type="text/javascript">
+                $('#medico_id').select2({
+            placeholder: 'Selecione o médico',
+            language: {
+                noResults: function() {
+                    return "Resultados não encontrados";
+                },
+                inputTooShort: function() {
+                    return "Digite 1 ou mais caracteres";
+                }
+            },
+            minimumInputLength: 1,
+            ajax: {
+                url: '{{ route('atendimentos.buscaMedico') }}',
+                dataType: 'json',
+                delay: 250,
+                processResults: function(data) {
+                    return {
+                        results: $.map(data, function(item) {
+                            return {
+                                text: item.nome,
+                                id: item.id
+                            }
+                        })
+                    };
+                },
+                cache: true
+            }
+        });
+    </script>
 
 @endsection
