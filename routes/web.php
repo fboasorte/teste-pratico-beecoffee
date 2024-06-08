@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::resource('pacientes','PacienteController');
+Route::resource('especialidades','EspecialidadeController');
