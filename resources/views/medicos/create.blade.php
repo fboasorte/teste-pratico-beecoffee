@@ -50,7 +50,6 @@
             </div>
         </form>
     </div>
-    </form>
 
     <script type="text/javascript">
         $('#especialidades').select2({
