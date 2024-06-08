@@ -18,37 +18,50 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Nome:</h6>
+                                <h6 class="mb-0">Data:</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                {{ $medico->nome }}
+                                {{ date('d/m/Y', strtotime($atendimento->data_atendimento)) }}
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">CRM:</h6>
+                                <h6 class="mb-0">Hora de Início:</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                {{ $medico->crm }}
+                                {{ date('H:i', strtotime($atendimento->hora_inicio)) }}
                             </div>
                         </div>
 
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Especialidades:</h6>
+                                <h6 class="mb-0">Hora de Término:</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
+                                {{ date('H:i', strtotime($atendimento->hora_fim)) }}
+                            </div>
+                        </div>
 
-                                @if (count($medico->especialidades) > 0)
-                                    <ul>
-                                        @foreach ($medico->especialidades as $especialidade)
-                                            <li>{{ $especialidade->nome }}</li>
-                                        @endforeach
-                                    </ul>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Médico:</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                {{ $atendimento->medico->nome }}
+                            </div>
+                        </div>
 
-                                @endif
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Paciente:</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                {{ $atendimento->paciente->nome }}
                             </div>
                         </div>
                     </div>

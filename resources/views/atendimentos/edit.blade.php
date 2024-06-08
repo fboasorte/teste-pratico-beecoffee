@@ -32,7 +32,7 @@
                 <div class="col">
                     <label for="hora_inicio" class="form-label"> <br>Hora de Início*:</label>
                     <input type="time" name="hora_inicio" id="hora_inicio" value="{{ date('H:i', strtotime($atendimento->hora_inicio)) }}"
-                        class="form-control @error('crm') is-invalid @enderror" placeholder="Hora de Início" required>
+                        class="form-control @error('hora_inicio') is-invalid @enderror" placeholder="Hora de Início" required>
 
                     @error('hora_inicio')
                         <div class="text-danger">
@@ -42,9 +42,9 @@
                 </div>
 
                 <div class="col">
-                    <label for="hora_fim" class="form-label"> <br>Hora de Início*:</label>
+                    <label for="hora_fim" class="form-label"> <br>Hora de Término*:</label>
                     <input type="time" name="hora_fim" id="hora_fim" value="{{ date('H:i', strtotime($atendimento->hora_fim))}}"
-                        class="form-control @error('crm') is-invalid @enderror" placeholder="Hora de Termino" required>
+                        class="form-control @error('hora_fim') is-invalid @enderror" placeholder="Hora de Termino" required>
 
                     @error('hora_fim')
                         <div class="text-danger">
