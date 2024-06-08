@@ -17,7 +17,7 @@
             <div class="mb-3">
                 <label for="nome" class="form-label"> <br>Nome*:</label>
                 <input type="text" name="nome" id="nome" class="form-control @error('nome') is-invalid @enderror"
-                    placeholder="Nome" required>
+                    maxlength="255" placeholder="Nome" required>
 
                 @error('nome')
                     <div class="invalid-feedback">

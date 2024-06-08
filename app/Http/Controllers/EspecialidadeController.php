@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Especialidade;
-use Illuminate\Http\Request;
+use App\Http\Requests\EspecialidadeRequest;
 
 class EspecialidadeController extends Controller
 {
@@ -32,10 +32,10 @@ class EspecialidadeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  EspecialidadeRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EspecialidadeRequest $request)
     {
         $especialidade = new Especialidade([
             'nome' => $request->nome,
@@ -71,11 +71,11 @@ class EspecialidadeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  EspecialidadeRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EspecialidadeRequest $request, $id)
     {
         $especialidade = Especialidade::findOrFail($id);
 
