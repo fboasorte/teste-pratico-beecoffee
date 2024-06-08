@@ -21,8 +21,8 @@
                     value="{{ $paciente->nome }}" maxlength="255" placeholder="Nome" required>
 
                 @error('nome')
-                    <div class="invalid-feedback">
-                        {{ $message }}
+                    <div class="text-danger">
+                        <span>{{ $message }}</span>
                     </div>
                 @enderror
             </div>
@@ -33,8 +33,8 @@
                     value="{{ $paciente->cpf }}" maxlength="11" placeholder="CPF" required>
 
                 @error('cpf')
-                    <div class="invalid-feedback">
-                        {{ $message }}
+                    <div class="text-danger">
+                        <span>{{ $message }}</span>
                     </div>
                 @enderror
             </div>
@@ -46,8 +46,8 @@
                     value="{{ $paciente->data_nascimento }}" required>
 
                 @error('data_nascimento')
-                    <div class="invalid-feedback">
-                        {{ $message }}
+                    <div class="text-danger">
+                        <span>{{ $message }}</span>
                     </div>
                 @enderror
             </div>
@@ -58,8 +58,8 @@
                     class="form-control @error('email') is-invalid @enderror" maxlength="255" placeholder="E-mail" required>
 
                 @error('email')
-                    <div class="invalid-feedback">
-                        {{ $message }}
+                    <div class="text-danger">
+                        <span>{{ $message }}</span>
                     </div>
                 @enderror
             </div>

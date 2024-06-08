@@ -21,8 +21,8 @@
                     maxlength="255" value="{{ $especialidade->nome }}" placeholder="Nome" required>
 
                 @error('nome')
-                    <div class="invalid-feedback">
-                        {{ $message }}
+                    <div class="text-danger">
+                        <span>{{ $message }}</span>
                     </div>
                 @enderror
             </div>

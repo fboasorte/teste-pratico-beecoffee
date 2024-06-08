@@ -23,8 +23,8 @@
                         class="form-control @error('nome') is-invalid @enderror" placeholder="Data" required>
 
                     @error('data_atendimento')
-                        <div class="invalid-feedback">
-                            {{ $message }}
+                        <div class="text-danger">
+                            <span>{{ $message }}</span>
                         </div>
                     @enderror
                 </div>
@@ -35,8 +35,8 @@
                         class="form-control @error('crm') is-invalid @enderror" placeholder="Hora de Início" required>
 
                     @error('hora_inicio')
-                        <div class="invalid-feedback">
-                            {{ $message }}
+                        <div class="text-danger">
+                            <span>{{ $message }}</span>
                         </div>
                     @enderror
                 </div>
@@ -47,8 +47,8 @@
                         class="form-control @error('crm') is-invalid @enderror" placeholder="Hora de Termino" required>
 
                     @error('hora_fim')
-                        <div class="invalid-feedback">
-                            {{ $message }}
+                        <div class="text-danger">
+                            <span>{{ $message }}</span>
                         </div>
                     @enderror
                 </div>
@@ -66,7 +66,8 @@
                 <div class="col-12 col-sm-6 col-lg-6">
                     <label for="paciente_id" class="form-label"> <br>Paciente*:</label>
                     <select class="form-select" name="paciente_id" id="paciente_id">
-                        <option value="{{ $atendimento->paciente_id }}" selected> {{ $atendimento->paciente->nome }}</option>
+                        <option value="{{ $atendimento->paciente_id }}" selected> {{ $atendimento->paciente->nome }}
+                        </option>
                     </select>
                 </div>
             </div>

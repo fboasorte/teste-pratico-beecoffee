@@ -20,16 +20,15 @@
                     maxlength="255" placeholder="Nome" required>
 
                 @error('nome')
-                    <div class="invalid-feedback">
-                        {{ $message }}
+                    <div class="text-danger">
+                        <span>{{ $message }}</span>
                     </div>
                 @enderror
             </div>
 
             <div class="d-flex justify-content-center mt-4">
                 <button type="submit" class="btn btn-success">Cadastrar</button>
-                <a href="{{ route('especialidades.index') }} "
-                    class="btn btn-light">Cancelar</a>
+                <a href="{{ route('especialidades.index') }} " class="btn btn-light">Cancelar</a>
             </div>
         </form>
     </div>

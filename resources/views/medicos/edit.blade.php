@@ -21,8 +21,8 @@
                     maxlength="255" value="{{ $medico->nome }}" placeholder="Nome" required>
 
                 @error('nome')
-                    <div class="invalid-feedback">
-                        {{ $message }}
+                    <div class="text-danger">
+                        <span>{{ $message }}</span>
                     </div>
                 @enderror
             </div>
@@ -33,8 +33,8 @@
                     maxlength="255" value="{{ $medico->crm }}" placeholder="crm" required>
 
                 @error('crm')
-                    <div class="invalid-feedback">
-                        {{ $message }}
+                    <div class="text-danger">
+                        <span>{{ $message }}</span>
                     </div>
                 @enderror
             </div>

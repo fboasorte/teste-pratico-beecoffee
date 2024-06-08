@@ -19,11 +19,11 @@
                 <div class="col">
                     <label for="data_atendimento" class="form-label"> <br>Data*:</label>
                     <input type="date" name="data_atendimento" id="data_atendimento"
-                        class="form-control @error('nome') is-invalid @enderror" placeholder="Data" required>
-    
+                        class="form-control @error('nome') is-invalid @enderror" placeholder="Data">
+
                     @error('data_atendimento')
-                        <div class="invalid-feedback">
-                            {{ $message }}
+                        <div class="text-danger">
+                            <span>{{ $message }}</span>
                         </div>
                     @enderror
                 </div>
@@ -31,11 +31,12 @@
                 <div class="col">
                     <label for="hora_inicio" class="form-label"> <br>Hora de Início*:</label>
                     <input type="time" name="hora_inicio" id="hora_inicio"
-                        class="form-control @error('crm') is-invalid @enderror" placeholder="Hora de Início" required>
+                        class="form-control @error('hora_inicio') is-invalid @enderror" placeholder="Hora de Início"
+                        required>
 
                     @error('hora_inicio')
-                        <div class="invalid-feedback">
-                            {{ $message }}
+                        <div class="text-danger">
+                            <span>{{ $message }}</span>
                         </div>
                     @enderror
                 </div>
@@ -43,11 +44,11 @@
                 <div class="col">
                     <label for="hora_fim" class="form-label"> <br>Hora de Início*:</label>
                     <input type="time" name="hora_fim" id="hora_fim"
-                        class="form-control @error('crm') is-invalid @enderror" placeholder="Hora de Termino" required>
+                        class="form-control @error('hora_fim') is-invalid @enderror" placeholder="Hora de Termino" required>
 
                     @error('hora_fim')
-                        <div class="invalid-feedback">
-                            {{ $message }}
+                        <div class="text-danger">
+                            <span>{{ $message }}</span>
                         </div>
                     @enderror
                 </div>
@@ -68,8 +69,7 @@
 
             <div class="d-flex justify-content-center mt-4">
                 <button type="submit" class="btn btn-success">Cadastrar</button>
-                <a href="{{ route('atendimentos.index') }} "
-                    class="btn btn-light">Cancelar</a>
+                <a href="{{ route('atendimentos.index') }} " class="btn btn-light">Cancelar</a>
             </div>
 
         </form>

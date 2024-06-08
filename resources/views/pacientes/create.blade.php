@@ -17,11 +17,11 @@
             <div class="mb-3">
                 <label for="nome" class="form-label"> <br>Nome*:</label>
                 <input type="text" name="nome" id="nome" class="form-control @error('nome') is-invalid @enderror"
-                maxlength="255" placeholder="Nome" required>
+                    maxlength="255" placeholder="Nome" required>
 
                 @error('nome')
-                    <div class="invalid-feedback">
-                        {{ $message }}
+                    <div class="text-danger">
+                        <span>{{ $message }}</span>
                     </div>
                 @enderror
             </div>
@@ -32,8 +32,8 @@
                     maxlength="11" placeholder="CPF" required>
 
                 @error('cpf')
-                    <div class="invalid-feedback">
-                        {{ $message }}
+                    <div class="text-danger">
+                        <span>{{ $message }}</span>
                     </div>
                 @enderror
             </div>
@@ -45,28 +45,27 @@
                     required>
 
                 @error('data_nascimento')
-                    <div class="invalid-feedback">
-                        {{ $message }}
+                    <div class="text-danger">
+                        <span>{{ $message }}</span>
                     </div>
                 @enderror
             </div>
 
             <div class="mb-3">
                 <label for="cpf" class="form-label"> <br>E-mail*:</label>
-                <input type="email" name="email" id="email"
-                maxlength="255" class="form-control @error('email') is-invalid @enderror" placeholder="E-mail" required>
+                <input type="email" name="email" id="email" maxlength="255"
+                    class="form-control @error('email') is-invalid @enderror" placeholder="E-mail" required>
 
                 @error('email')
-                    <div class="invalid-feedback">
-                        {{ $message }}
+                    <div class="text-danger">
+                        <span>{{ $message }}</span>
                     </div>
                 @enderror
             </div>
 
             <div class="d-flex justify-content-center mt-4">
                 <button type="submit" class="btn btn-success">Cadastrar</button>
-                <a href="{{ route('pacientes.index') }} "
-                    class="btn btn-light">Cancelar</a>
+                <a href="{{ route('pacientes.index') }} " class="btn btn-light">Cancelar</a>
             </div>
         </form>
     </div>
