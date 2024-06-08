@@ -17,7 +17,7 @@ class CreateMedicosTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nome');
-            $table->string('crm');
+            $table->string('crm')->unique();
         });
     }
 

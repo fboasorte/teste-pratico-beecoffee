@@ -47,11 +47,13 @@
 
                                     <td class="text-left text-wrap" data-toggle="tooltip" data-placement="top">
                                         @if (count($medico->especialidades) > 0)
-                                        @foreach ($medico->especialidades as $especialidade)
-                                        <span>{{ $especialidade->nome }}
-                                        </span><br>
-                                        @endforeach
-                                        <br>
+                                        <ul>
+                                            @foreach ($medico->especialidades as $especialidade)
+                                                <li>{{ $especialidade->nome }}</li>
+                                            @endforeach
+                                        </ul>
+                                        @else
+                                            <p>Não possui</p>
                                         @endif
                                     </td>
 

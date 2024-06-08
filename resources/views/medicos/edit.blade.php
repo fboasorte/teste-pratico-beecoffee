@@ -18,7 +18,7 @@
             <div class="mb-3">
                 <label for="nome" class="form-label"> <br>Nome*:</label>
                 <input type="text" name="nome" id="nome" class="form-control @error('nome') is-invalid @enderror"
-                    value="{{ $medico->nome }}" placeholder="Nome" required>
+                    maxlength="255" value="{{ $medico->nome }}" placeholder="Nome" required>
 
                 @error('nome')
                     <div class="invalid-feedback">
@@ -30,7 +30,7 @@
             <div class="mb-3">
                 <label for="crm" class="form-label"> <br>CRM*:</label>
                 <input type="text" name="crm" id="crm" class="form-control @error('crm') is-invalid @enderror"
-                    value="{{ $medico->crm }}" placeholder="crm" required>
+                    maxlength="255" value="{{ $medico->crm }}" placeholder="crm" required>
 
                 @error('crm')
                     <div class="invalid-feedback">

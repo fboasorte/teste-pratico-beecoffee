@@ -17,7 +17,7 @@
             <div class="mb-3">
                 <label for="nome" class="form-label"> <br>Nome*:</label>
                 <input type="text" name="nome" id="nome" class="form-control @error('nome') is-invalid @enderror"
-                    placeholder="Nome" required>
+                    maxlength="255" placeholder="Nome" required>
 
                 @error('nome')
                     <div class="invalid-feedback">
@@ -29,7 +29,7 @@
             <div class="mb-3">
                 <label for="crm" class="form-label"> <br>CRM*:</label>
                 <input type="text" name="crm" id="crm" class="form-control @error('crm') is-invalid @enderror"
-                    placeholder="crm" required>
+                    maxlength="255" placeholder="crm" required>
 
                 @error('crm')
                     <div class="invalid-feedback">
@@ -45,8 +45,7 @@
 
             <div class="d-flex justify-content-center mt-4">
                 <button type="submit" class="btn btn-success">Cadastrar</button>
-                <a href="{{ route('medicos.index') }} "
-                    class="btn btn-light">Cancelar</a>
+                <a href="{{ route('medicos.index') }} " class="btn btn-light">Cancelar</a>
             </div>
         </form>
     </div>
@@ -64,7 +63,7 @@
             },
             minimumInputLength: 1,
             ajax: {
-                url: '{{ route("medicos.buscaEspecialidades") }}',
+                url: '{{ route('medicos.buscaEspecialidades') }}',
                 dataType: 'json',
                 delay: 250,
                 processResults: function(data) {
