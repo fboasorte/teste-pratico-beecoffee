@@ -5,7 +5,7 @@
     <div class="custom-container">
         <div>
             <div>
-                <i class="fas fa-user fa-2x"></i>
+                <i class="fas fa-user-doctor fa-2x"></i>
                 <h3 class="smaller-font">Médico</h3>
             </div>
         </div>
