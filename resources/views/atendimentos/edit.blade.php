@@ -1,0 +1,143 @@
+@extends('layouts.main')
+@section('title', 'Editar Atendimento')
+@section('content')
+
+    <div class="custom-container">
+        <div>
+            <div>
+                <i class="fas fa-calendar fa-2x"></i>
+                <h3 class="smaller-font">Edição de Atendimento</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <form method="post" action="{{ route('atendimentos.update', $atendimento->id) }}">
+            @method('PUT')
+            @csrf
+            <div class="row">
+                <div class="col">
+                    <label for="data_atendimento" class="form-label"> <br>Data*:</label>
+                    <input type="date" name="data_atendimento" id="data_atendimento"
+                        value="{{ $atendimento->data_atendimento }}"
+                        class="form-control @error('nome') is-invalid @enderror" placeholder="Data" required>
+
+                    @error('data_atendimento')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="col">
+                    <label for="hora_inicio" class="form-label"> <br>Hora de Início*:</label>
+                    <input type="time" name="hora_inicio" id="hora_inicio" value="{{ $atendimento->hora_inicio }}"
+                        class="form-control @error('crm') is-invalid @enderror" placeholder="Hora de Início" required>
+
+                    @error('hora_inicio')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="col">
+                    <label for="hora_fim" class="form-label"> <br>Hora de Início*:</label>
+                    <input type="time" name="hora_fim" id="hora_fim" value="{{ $atendimento->hora_fim }}"
+                        class="form-control @error('crm') is-invalid @enderror" placeholder="Hora de Termino" required>
+
+                    @error('hora_fim')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-12 col-sm-6 col-lg-6">
+                    <label for="medico_id" class="form-label"> <br>Médico*:</label>
+                    <select class="form-select" name="medico_id" id="medico_id">
+                        <option value="{{ $atendimento->medico_id }}" selected> {{ $atendimento->medico->nome }}</option>
+                    </select>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-6">
+                    <label for="paciente_id" class="form-label"> <br>Paciente*:</label>
+                    <select class="form-select" name="paciente_id" id="paciente_id">
+                        <option value="{{ $atendimento->paciente_id }}" selected> {{ $atendimento->paciente->nome }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center mt-4">
+                <button type="submit" class="btn btn-success">Atualizar</button>
+                <a href="{{ route('atendimentos.index') }} " class="btn btn-light">Cancelar</a>
+            </div>
+
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        $('#medico_id').select2({
+            placeholder: 'Selecione o médico',
+            language: {
+                noResults: function() {
+                    return "Resultados não encontrados";
+                },
+                inputTooShort: function() {
+                    return "Digite 1 ou mais caracteres";
+                }
+            },
+            minimumInputLength: 1,
+            ajax: {
+                url: '{{ route('atendimentos.buscaMedico') }}',
+                dataType: 'json',
+                delay: 250,
+                processResults: function(data) {
+                    return {
+                        results: $.map(data, function(item) {
+                            return {
+                                text: item.nome,
+                                id: item.id
+                            }
+                        })
+                    };
+                },
+                cache: true
+            }
+        });
+
+        $('#paciente_id').select2({
+            placeholder: 'Selecione o paciente',
+            language: {
+                noResults: function() {
+                    return "Resultados não encontrados";
+                },
+                inputTooShort: function() {
+                    return "Digite 1 ou mais caracteres";
+                }
+            },
+            minimumInputLength: 1,
+            ajax: {
+                url: '{{ route('atendimentos.buscaPaciente') }}',
+                dataType: 'json',
+                delay: 250,
+                processResults: function(data) {
+                    return {
+                        results: $.map(data, function(item) {
+                            return {
+                                text: item.nome,
+                                id: item.id
+                            }
+                        })
+                    };
+                },
+                cache: true
+            }
+        });
+    </script>
+
+
+@endsection

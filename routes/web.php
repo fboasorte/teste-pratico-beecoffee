@@ -18,6 +18,10 @@ Route::get('/', function () {
 });
 
 Route::get('medicos/busca-especialidades', 'MedicoController@buscaEspecialidades')->name('medicos.buscaEspecialidades');
+Route::resource('medicos','MedicoController');
 Route::resource('pacientes','PacienteController');
 Route::resource('especialidades','EspecialidadeController');
-Route::resource('medicos','MedicoController');
+
+Route::get('atendimentos/busca-medico', 'AtendimentoController@buscaMedico')->name('atendimentos.buscaMedico');
+Route::get('atendimentos/busca-paciente', 'AtendimentoController@buscaPaciente')->name('atendimentos.buscaPaciente');
+Route::resource('atendimentos','AtendimentoController');
