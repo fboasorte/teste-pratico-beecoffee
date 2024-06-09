@@ -58,12 +58,24 @@
 
                 <div class="col-12 col-sm-6 col-lg-6">
                     <label for="medico_id" class="form-label"> <br>Médico*:</label>
-                    <select class="form-select" name="medico_id" id="medico_id"></select>
+                    <select class="form-select @error('medico_id') is-invalid @enderror" name="medico_id" id="medico_id"></select>
+
+                    @error('medico_id')
+                        <div class="text-danger">
+                            <span>{{ $message }}</span>
+                        </div>
+                    @enderror
                 </div>
 
                 <div class="col-12 col-sm-6 col-lg-6">
                     <label for="paciente_id" class="form-label"> <br>Paciente*:</label>
-                    <select class="form-select" name="paciente_id" id="paciente_id"></select>
+                    <select class="form-select @error('paciente_id') is-invalid @enderror" name="paciente_id" id="paciente_id"></select>
+
+                    @error('paciente_id')
+                        <div class="text-danger">
+                            <span>{{ $message }}</span>
+                        </div>
+                    @enderror
                 </div>
             </div>
 

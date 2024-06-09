@@ -31,8 +31,10 @@
 
                 <div class="col">
                     <label for="hora_inicio" class="form-label"> <br>Hora de Início*:</label>
-                    <input type="time" name="hora_inicio" id="hora_inicio" value="{{ date('H:i', strtotime($atendimento->hora_inicio)) }}"
-                        class="form-control @error('hora_inicio') is-invalid @enderror" placeholder="Hora de Início" required>
+                    <input type="time" name="hora_inicio" id="hora_inicio"
+                        value="{{ date('H:i', strtotime($atendimento->hora_inicio)) }}"
+                        class="form-control @error('hora_inicio') is-invalid @enderror" placeholder="Hora de Início"
+                        required>
 
                     @error('hora_inicio')
                         <div class="text-danger">
@@ -43,7 +45,8 @@
 
                 <div class="col">
                     <label for="hora_fim" class="form-label"> <br>Hora de Término*:</label>
-                    <input type="time" name="hora_fim" id="hora_fim" value="{{ date('H:i', strtotime($atendimento->hora_fim))}}"
+                    <input type="time" name="hora_fim" id="hora_fim"
+                        value="{{ date('H:i', strtotime($atendimento->hora_fim)) }}"
                         class="form-control @error('hora_fim') is-invalid @enderror" placeholder="Hora de Termino" required>
 
                     @error('hora_fim')
@@ -61,6 +64,12 @@
                     <select class="form-select" name="medico_id" id="medico_id">
                         <option value="{{ $atendimento->medico_id }}" selected> {{ $atendimento->medico->nome }}</option>
                     </select>
+
+                    @error('medico_id')
+                        <div class="text-danger">
+                            <span>{{ $message }}</span>
+                        </div>
+                    @enderror
                 </div>
 
                 <div class="col-12 col-sm-6 col-lg-6">
@@ -69,6 +78,12 @@
                         <option value="{{ $atendimento->paciente_id }}" selected> {{ $atendimento->paciente->nome }}
                         </option>
                     </select>
+
+                    @error('paciente_id')
+                        <div class="text-danger">
+                            <span>{{ $message }}</span>
+                        </div>
+                    @enderror
                 </div>
             </div>
 
