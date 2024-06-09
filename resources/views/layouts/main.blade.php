@@ -63,6 +63,8 @@
     </header>
 
     <div class="container2">
+        @include('layouts.flash-message')
+
         @yield('content')
     </div>
 
